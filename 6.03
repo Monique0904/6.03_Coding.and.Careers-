@@ -1,0 +1,130 @@
+def drawFlower(t):
+    t.penup()
+    t.setpos(80,-6) 
+    t.left(90)
+    t.pendown() 
+
+    t.color("brown")
+    t.begin_fill()
+    t.right(90)
+    t.circle(13)
+    t.end_fill()
+	
+def drawPetals(s):
+
+	s.color("yellow")
+	
+	for x in range (5):
+		s.up()
+		s.goto(80,6)
+		s.down()
+		s.begin_fill()
+		s.circle(90,70)
+		s.end_fill()
+		
+	for x in range (5):
+		s.up()
+		s.goto(80,6)
+		s.down()
+		s.begin_fill()
+		s.circle(-80,70.15)
+		s.end_fill()
+		
+def drawLeaves(e):
+
+	e.color("green")
+
+	for y in range (2):
+		e.up()
+		e.goto(80,6)
+		e.down()
+		e.begin_fill()
+		e.circle(100,90)
+		e.end_fill()
+		
+	for y in range (2):
+		e.up()
+		e.goto(80,6)
+		e.down()
+		e.begin_fill()
+		e.circle(-100,90) 
+		e.end_fill()
+		
+def pomPom(r):
+	
+	r.color("light green")
+	
+	for n in range (0,90,5):
+		r.up()
+		r.goto(-5,-5)
+		r.down()
+		r.circle(100,70)
+		
+	r.color("pink")
+	
+	for x in range (0,90,5):
+		r.up()
+		r.goto(-5,-5)
+		r.down()
+		r.circle(100,70)
+		
+def circles1(t):
+	
+	t.color("light blue")
+	
+	for x in range (20):
+		t.up()
+		t.goto(5,10)
+		t.down()
+		t.circle(100,20)
+	
+	t.color("purple")
+	
+	for x in range (20):
+		t.up()
+		t.goto(35,20)
+		t.down()
+		t.circle(100,20)
+		
+	t.color("light pink")
+	
+	for x in range (20):
+		t.up()
+		t.goto(75,10)
+		t.down()
+		t.circle(100,20)
+	
+	t.color("light green")
+	
+	for x in range (20):
+		t.up()
+		t.goto(115,20)
+		t.down()
+		t.circle(100,20)
+    
+import turtle
+
+def main():
+
+	rev = turtle.Turtle()
+	rev.speed(7)
+	
+	while True:
+  
+		shape = input("What shape do you want to draw? (Flower, Pompom, Circle)").lower()
+    
+		if(shape == "pompom"):
+			pomPom(rev)
+			break
+		elif(shape == "flower"):
+			drawLeaves(rev)
+			drawPetals(rev)
+			drawFlower(rev)
+			break
+		elif(shape == "circles"):
+			circles1(rev)
+			break
+		else:
+			continue
+			
+main()
